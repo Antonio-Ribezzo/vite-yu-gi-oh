@@ -1,14 +1,43 @@
 <script>
+  import axios from 'axios';
+  // importo il file store.js per poi renderlo disponibile dentro data()
+  import {store} from './store.js'
+  import headerComp from './components/headerComp.vue';
+
 
   export default{
-    name: 'App'
+    name: 'App',
+
+    components: {
+      headerComp
+    },
+
+    data(){
+      return{
+        store
+      }
+    },
+    
+    created(){
+      this.activeApi()
+    },
+
+    methods:{
+      activeApi(){
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=1')
+        .then((res)=>{
+          this.store.arrayCards = res.data.data
+        })
+      }
+    }
   }
 
 </script>
 
 <template>
 
-  <h1 class="text-center">ciao</h1>
+  <headerComp/>
+
   
 </template>
 
