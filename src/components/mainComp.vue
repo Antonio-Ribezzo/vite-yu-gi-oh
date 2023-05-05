@@ -30,10 +30,16 @@
                 </select>
             </div>
             <!-- container  cards-->
-            <div id="containerCards" class="p-4 rounded">
+            <div id="containerCards" class="p-4 rounded bg-white">
                 <!-- counter -->
                 <div class="bg-secondary rounded p-3 text-center text-white">
-                    <span>Found {{ store.arrayCards.length }} cards</span>
+                    <p class="m-0">
+                        Found 
+                            <span class="rounded-circle p-2 mx-2 bg-success">
+                                {{ store.arrayCards.length }}
+                            </span> 
+                        cards
+                    </p>
                 </div>
 
                 <!-- cards -->
@@ -52,9 +58,5 @@
     main{
         background: rgb(121,110,9);
         background: linear-gradient(90deg, rgba(121,110,9,1) 12%, rgba(121,52,9,1) 65%, rgba(228,46,12,1) 100%);
-    }
-
-    #containerCards{
-        background-color: white;
     }
 </style>
