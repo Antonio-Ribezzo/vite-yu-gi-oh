@@ -28,9 +28,10 @@
 
     methods:{
       activeApi(){
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=1')
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54')
         .then((res)=>{
           this.store.arrayCards = res.data.data
+          console.log(res.data.data)
         })
       }
     }

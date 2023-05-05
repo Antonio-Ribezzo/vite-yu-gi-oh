@@ -18,7 +18,7 @@
 </script>
 
 <template>
-    <div id="mainContainer">
+    <main>
         <div class="container py-5">
             <!-- select -->
             <div class="my-2 col-3">
@@ -29,30 +29,32 @@
                     <option value="4">Four</option>
                 </select>
             </div>
-            <!-- main container -->
-            <main class="p-4 rounded">
+            <!-- container  cards-->
+            <div id="containerCards" class="p-4 rounded">
                 <!-- counter -->
                 <div class="bg-secondary rounded p-3 text-center text-white">
                     <span>Found {{ store.arrayCards.length }} cards</span>
                 </div>
 
                 <!-- cards -->
-                <div class="d-flex justify-content-between align-items-center flex-wrap mt-4">
-                    <cardItem v-for="(el,index) in store.arrayCards" :key="index"
+                <div class="d-flex justify-content-between align-items-start flex-wrap mt-4">
+                    <cardItem v-for="(el,index) in store.arrayCards" 
+                    :key="index"
+                    :arrayCards="el"
                     />
                 </div>
-            </main>
+            </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style lang="scss" scoped>
-    #mainContainer{
+    main{
         background: rgb(121,110,9);
         background: linear-gradient(90deg, rgba(121,110,9,1) 12%, rgba(121,52,9,1) 65%, rgba(228,46,12,1) 100%);
     }
 
-    main{
+    #containerCards{
         background-color: white;
     }
 </style>
