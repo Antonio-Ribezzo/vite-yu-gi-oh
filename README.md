@@ -1,1 +1,1 @@
-# Template base Vite + Vue3
+# Yu-Gi-Oh API
