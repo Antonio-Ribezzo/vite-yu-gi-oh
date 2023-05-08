@@ -25,18 +25,11 @@
     },
     
     created(){
-      this.activeGlobalApi(),
-      this.activeArchetypesApi()
+      this.activeGlobalApi,
+      this.activeArchetypesApi
     },
 
-    methods:{
-      // activeGlobalApi(){
-      //   axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54')
-      //   .then((res)=>{
-      //     this.store.arrayCards = res.data.data
-      //     console.log(res.data.data)
-      //   })
-      // },
+    computed:{
       activeGlobalApi(){
         if(this.store.nomeArchetype == ''){
           axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54`)
