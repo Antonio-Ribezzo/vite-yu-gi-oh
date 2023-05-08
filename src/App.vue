@@ -30,13 +30,29 @@
     },
 
     methods:{
+      // activeGlobalApi(){
+      //   axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54')
+      //   .then((res)=>{
+      //     this.store.arrayCards = res.data.data
+      //     console.log(res.data.data)
+      //   })
+      // },
       activeGlobalApi(){
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54')
-        .then((res)=>{
-          this.store.arrayCards = res.data.data
-          console.log(res.data.data)
-        })
+        if(this.store.nomeArchetype == ''){
+          axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54`)
+          .then((res)=>{
+            this.store.arrayCards = res.data.data
+            console.log(res.data.data)
+          })
+        } else {
+          axios.get(` https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.nomeArchetype}`)
+          .then((res)=>{
+            this.store.arrayCards = res.data.data
+            console.log(res.data.data)
+          })
+        }
       },
+
       activeArchetypesApi(){
         axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
         .then((res)=>{
@@ -53,7 +69,8 @@
 
   <headerComp/>
 
-  <selectComp/>
+  <selectComp @search="activeGlobalApi"
+  />
   
   <mainComp/>
 
