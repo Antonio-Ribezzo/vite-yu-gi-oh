@@ -7,7 +7,7 @@
 
 
 <template>
-    <header>
+    <header class="pb-4">
         <div class="container p-4 text-center position-relative">
             <!-- title -->
             <h1 class="text-white">Yu-Gi-Oh API</h1>

@@ -6,6 +6,7 @@
   // importo i componenti
   import headerComp from './components/headerComp.vue';
   import mainComp from './components/mainComp.vue';
+  import selectComp from './components/selectComp.vue';
 
 
   export default{
@@ -13,7 +14,8 @@
 
     components: {
       headerComp,
-      mainComp
+      mainComp,
+      selectComp
     },
 
     data(){
@@ -50,6 +52,8 @@
 <template>
 
   <headerComp/>
+
+  <selectComp/>
   
   <mainComp/>
 

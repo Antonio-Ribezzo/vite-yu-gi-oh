@@ -19,13 +19,7 @@
 
 <template>
     <main>
-        <div class="container py-5">
-            <!-- select -->
-            <div class="my-2 col-3">
-                <select class="form-select" aria-label="Default select example">
-                    <option v-for="(el,i) in this.store.arrayArchetypes" :value="i">{{ el.archetype_name }}</option>
-                </select>
-            </div>
+        <div class="container pb-5">
             <!-- container  cards-->
             <div id="containerCards" class="p-4 rounded">
                 <!-- counter -->
