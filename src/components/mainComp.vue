@@ -23,10 +23,7 @@
             <!-- select -->
             <div class="my-2 col-3">
                 <select class="form-select" aria-label="Default select example">
-                    <option value="1">Alien</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <option value="4">Four</option>
+                    <option v-for="(el,i) in this.store.arrayArchetypes" :value="i">{{ el.archetype_name }}</option>
                 </select>
             </div>
             <!-- container  cards-->
