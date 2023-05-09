@@ -31,7 +31,7 @@
 
     computed:{
       activeGlobalApi(){
-        if(this.store.nomeArchetype == ''){
+        if(store.nomeArchetype == ''){
           axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=54`)
           .then((res)=>{
             this.store.arrayCards = res.data.data

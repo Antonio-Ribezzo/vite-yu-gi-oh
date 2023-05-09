@@ -17,9 +17,9 @@
     <div id="containerSelect">
         <div class="container pt-4 pb-2">
             <div class="col-3">
-                <select class="form-select" @change="$emit('search')" v-model="this.store.nomeArchetype">
+                <select class="form-select" @change="$emit('search')" v-model="store.nomeArchetype">
                     <option value="" selected>Choose an Archetype</option>
-                    <option v-for="(el,i) in this.store.arrayArchetypes" :value="el.archetype_name">{{ el.archetype_name }}</option>
+                    <option v-for="(el,i) in this.store.arrayArchetypes" :key="i" :value="el.archetype_name">{{ el.archetype_name }}</option>
                 </select>
             </div>
         </div>
